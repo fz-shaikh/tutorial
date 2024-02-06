@@ -1,0 +1,8 @@
+<div class="one">
+
+    <h2>parent works!</h2>
+
+    {{dataFromChild}}
+
+    <app-innerchild [parentData]="dataFromParent" [] (childEvent)="fetchDataFromChild($event)"></app-innerchild>
+</div>

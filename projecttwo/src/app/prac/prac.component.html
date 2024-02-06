@@ -1,0 +1,43 @@
+<p>prac works!</p>
+
+<form [formGroup]="formData" (ngSubmit)="addData()">
+
+
+    <div>
+        <label for="">name</label>
+        <input type="text" class="form-control" formControlName="title">
+    </div>
+    <div>
+        <label for="">email</label>
+        <input type="text" class="form-control" formControlName="category">
+    </div>
+    <div>
+        <label for="">password</label>
+        <input type="text" class="form-control" formControlName="price">
+    </div>
+
+
+    <button type="submit" class="btn btn-success m-3">submit</button>
+
+    <!-- <button type="button" class="btn btn-warning" (click)="onUpdate2()">UpdateData</button> -->
+</form>
+
+
+<table class="table table-hover table-striped" *ngIf="allData && allData.length>0">
+    <tr>
+        <th>name</th>
+        <th>email</th>
+        <th>password</th>
+    </tr>
+    <tr *ngFor="let data of allData">
+        <td>{{data.title}}</td>
+        <td>{{data.category}}</td>
+        <td>{{data.price}}</td>
+        <td>
+            <button class="btn btn-warning" (click)="onUpDate(data)">Edit</button>
+        </td>
+        <td>
+            <button class="btn btn-danger" (click)="onDeleteData(data)">Delete</button>
+        </td>
+    </tr>
+</table>
